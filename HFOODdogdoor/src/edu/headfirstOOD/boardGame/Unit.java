@@ -1,5 +1,6 @@
 package edu.headfirstOOD.boardGame;
 
-public class Units {
+public class Unit {
+
 
 }
