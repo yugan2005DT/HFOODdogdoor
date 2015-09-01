@@ -29,8 +29,10 @@ public class Door {
 
 	public List<Bark> getAllowedBarks(){
 		System.out.println("Allowed barks for this door are:");
+		int i=1;
 		for (Bark bark : allowedBarks){
-			System.out.println("Dog: "+ bark.getDogName()+" barks like: "+bark.getBarkSound()); 
+			System.out.println(i+": "+bark.getBarkSound());
+			i++;
 		}
 		return allowedBarks;
 		

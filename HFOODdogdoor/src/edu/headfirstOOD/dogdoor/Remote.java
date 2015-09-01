@@ -20,7 +20,7 @@ public class Remote {
 			System.out.println("Door is closed before button pressed, now opening...");
 			door.open();
 			Timer timer = new Timer();
-			long delay = 1000;
+			long delay = 5000;
 			timer.schedule(new TimerTask() {
 				@Override
 				public void run() {
