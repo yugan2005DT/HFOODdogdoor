@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,6 +55,20 @@ public class UnitTest {
 		testUnitA.setProperty("hitPoints", 25);
 		testUnitA.setProperty("hitPoints", 15);
 		assertThat(testUnitA.getProperty("hitPoints"), equalTo(15));
+	}
+	
+	@Test
+	public void setAndGetWeaponProperty(){
+		List<Weapon> weapons = new ArrayList<>();
+		Weapon riffle = new Weapon("riffle");
+		Weapon knife = new Weapon("knife", 2);
+		weapons.add(riffle);
+		weapons.add(knife);
+		testUnitA.setWeapon(weapons);
+		List<Weapon> weaponsTheSame = new ArrayList<>();
+		weaponsTheSame.add(riffle);
+		weaponsTheSame.add(knife);
+		assertThat(testUnitA.getWeapon(), equalTo(weaponsTheSame));
 	}
 
 }

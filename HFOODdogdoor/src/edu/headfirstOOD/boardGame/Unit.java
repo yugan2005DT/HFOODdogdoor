@@ -1,6 +1,7 @@
 package edu.headfirstOOD.boardGame;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Unit {
@@ -8,6 +9,7 @@ public class Unit {
 	private String type;
 	private int id;
 	private String name;
+	private List<Weapon> weapons;
 	
 	private Map<String, Object> properties;
 	
@@ -69,6 +71,15 @@ public class Unit {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setWeapon(List<Weapon> weapons) {
+		this.weapons=weapons;
+		
+	}
+
+	public Object getWeapon() {
+		return weapons;
 	}
 
 
