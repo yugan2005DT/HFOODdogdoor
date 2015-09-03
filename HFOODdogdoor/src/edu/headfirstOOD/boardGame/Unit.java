@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-package edu.headfirstOOD.boardGame;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class Unit {
-	
-	private String unitType;
-	private Map<String, Property> properties;
-	
-	public Unit(String unitType){
-		this.unitType = unitType;
-		this.properties = new HashMap<String, Property>();
-	}
-	
-	public Unit(String unitType, Map<String, Property> properties){
-		this.unitType = unitType;
-		this.properties = properties;
-	}
-
-	public String getUnitType() {
-		return unitType;
-	}
-
-	public void setUnitType(String unitType) {
-		this.unitType = unitType;
-	}
-
-	public Map<String, Property> getProperties() {
-		return properties;
-	}
-
-	public void setProperties(Map<String, Property> properties) {
-		this.properties = properties;
-	}
-	
-	public void addProperty(String propertyName, Property property){
-		properties.put(propertyName, property);
-	}
-
-
-}
-=======
 package edu.headfirstOOD.boardGame;
 
 import java.util.HashMap;
@@ -52,58 +8,68 @@ public class Unit {
 	private String type;
 	private int id;
 	private String name;
-	private Map<String, Property> properties;
+	
+	private Map<String, Object> properties;
 	
 	public Unit(){
-		properties = new HashMap<String, Property>();
-		
+		properties = new HashMap<String, Object>();
 	}
 	
-	
-
-	public Unit(String type, int id, String name) {
+	public Unit(String type){
 		this();
 		this.type = type;
-		this.id = id;
-		this.name = name;		
 	}
-
-
-
-	public void setType(String string) {
-		type=string;
+	
+	public Unit(String type, int id, String name){
+		this(type);
+		this.id=id;
+		this.name=name;
 	}
+	
 
-	public String getType() {
+	public String getType() throws NullTypePropertyException{
+		if (type==null || type.equals("")) throw new NullTypePropertyException("Type hasn't be set yet");
 		return type;
 	}
 
-	public void setProperty(String string, Property i) {
-		// TODO Auto-generated method stub
-		
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public Property getProperty(String string) {
-		if (properties.get(string)!=null){
-			return properties.get(string);
+	public Map<String, Object> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Map<String, Object> properties) {
+		this.properties = properties;
+	}
+	
+	public void setProperty(String propertyName, Object property){
+		properties.put(propertyName, property);
+	}
+	
+	public Object getProperty(String propertyName){
+		if (properties.get(propertyName) == null){
+			return "[no value]";
 		}
-		return new noProperty();
+		return properties.get(propertyName);
 	}
-
-
+	
+	public void setId(int id){
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
 	}
-
-
+	
+	public void setName(String name){
+		this.name=name;
+	}
 
 	public String getName() {
 		return name;
 	}
-	
-	
 
 
 }
->>>>>>> refs/remotes/origin/master

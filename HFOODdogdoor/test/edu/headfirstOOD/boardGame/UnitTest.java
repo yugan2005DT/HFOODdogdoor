@@ -17,13 +17,13 @@ public class UnitTest {
 	}
 	
 	@Test
-	public void setAndGetTypeProperty(){
+	public void setAndGetTypeProperty() throws NullTypePropertyException{
 		testUnitA.setType("infantry");
 		assertThat(testUnitA.getType(), equalTo("infantry"));
 	}
 	
 	@Test (expected=NullTypePropertyException.class)
-	public void getNullTypeProperty(){
+	public void getNullTypeProperty() throws NullTypePropertyException{
 		testUnitA.getType();
 	}
 	
@@ -39,7 +39,7 @@ public class UnitTest {
 	}
 	
 	@Test
-	public void parameterizedContructor(){
+	public void parameterizedContructor() throws NullTypePropertyException{
 		Unit testUnitB = new Unit("carrier", 1, "LiaoNin");
 		assertThat(testUnitB.getType(), equalTo("carrier"));
 		assertThat(testUnitB.getId(), equalTo(1));
@@ -50,7 +50,7 @@ public class UnitTest {
 	@Test
 	public void updateMapProperty(){
 		testUnitA.setProperty("hitPoints", 25);
-		testUnitA.setProperty("hitPoint", 15);
+		testUnitA.setProperty("hitPoints", 15);
 		assertThat(testUnitA.getProperty("hitPoints"), equalTo(15));
 	}
 
