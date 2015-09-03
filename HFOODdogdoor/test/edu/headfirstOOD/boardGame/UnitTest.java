@@ -36,9 +36,10 @@ public class UnitTest {
 		assertThat(testUnitA.getProperty("hitPoints"), equalTo(25));
 	}
 	
-	@Test
+	@Test(expected=NullMapPropertyException.class)
 	public void getNullMapProperty(){
-		assertThat(testUnitA.getProperty("strength"), equalTo("[no value]"));
+//		assertThat(testUnitA.getProperty("strength"), equalTo("[no value]"));
+		testUnitA.getProperty("strength");
 	}
 	
 	@Test

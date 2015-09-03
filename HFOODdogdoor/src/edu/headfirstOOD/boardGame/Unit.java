@@ -52,7 +52,7 @@ public class Unit {
 	
 	public Object getProperty(String propertyName){
 		if (properties.get(propertyName) == null){
-			return "[no value]";
+			throw new NullMapPropertyException("This property is not set yet!");
 		}
 		return properties.get(propertyName);
 	}
