@@ -28,11 +28,11 @@ public class SubwayTest {
 
 	@Test
 	public void addNewStation() {
-		subway.add(s1);
-		subway.add(s2);
+		subway.addStation(s1);
+		subway.addStation(s2);
 		Set<Station> actualStationsInSubway = new HashSet<>();
-		actualStationsInSubway.add(s1);
 		actualStationsInSubway.add(s2);
+		actualStationsInSubway.add(s1);
 		assertThat(subway.getStations(), equalTo(actualStationsInSubway));	
 	}
 	

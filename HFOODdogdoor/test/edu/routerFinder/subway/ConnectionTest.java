@@ -31,7 +31,7 @@ public class ConnectionTest {
 	
 	@Test(expected=ConnectionStationNullException.class)
 	public void stationInConnectionNullThrowException() {
-		new Connection(s1, null);
+		new Connection(s1, null, "ALineName");
 	}
 	
 	@Test(expected=ConnectionStationTheSameException.class)

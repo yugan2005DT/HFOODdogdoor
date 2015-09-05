@@ -14,12 +14,22 @@ public class Subway {
 		this.connections = new ArrayList<>();
 	}
 
-	public void add(Station s1) {
-		stations.add(s1);
+	public boolean addStation(Station s1) {
+		return stations.add(s1);
 	}
 
 	public Set<Station> getStations() {
 		return stations;
+	}
+	
+	public void addConnection(Connection conn){
+		connections.add(conn);
+	}
+	
+	public boolean isConnected(Station s1, Station s2){
+		if (!stations.contains(s1) || !stations.contains(s2)) return false;
+		
+		return false;
 	}
 
 }
