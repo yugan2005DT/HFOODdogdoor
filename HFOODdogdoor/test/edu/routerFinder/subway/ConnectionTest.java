@@ -29,9 +29,14 @@ public class ConnectionTest {
 		assertTrue(s1.equals(c1.getOtherStation(s2)));
 	}
 	
-	@Test(expected=StationInConnectionNullException.class)
+	@Test(expected=ConnectionStationNullException.class)
 	public void stationInConnectionNullThrowException() {
 		new Connection(s1, null);
+	}
+	
+	@Test(expected=ConnectionStationTheSameException.class)
+	public void setTwoStationTheSameInConnectionThrowException(){
+		c1.setStation(s1,s1);
 	}
 	
 
